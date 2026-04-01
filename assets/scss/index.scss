@@ -1,0 +1,245 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Inter";
+	font-weight: 400;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.universalButton {
+	padding: 30px 88px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	border-radius: 12px;
+	margin: auto 16px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.1s ease-in-out;
+	user-select: none;
+
+	&:active {
+		box-shadow: none !important;
+		top: 3px;
+	}
+}
+
+.processSelectionCard {
+	padding: 24px 0px;
+	box-shadow: 0 2px 32px 0 #08060D1A;
+	width: 700px;
+	border-radius: 32px;
+	display: flex;
+	min-height: 350px;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	position: relative;
+	transition: all 0.3s ease;
+
+	.cardHeadline {
+		padding: 7px 17px;
+		border: 2px solid #56565733;
+		border-radius: 4px;
+		font-size: 20px;
+		width: max-content;
+		font-weight: 600;
+		color: #565657;
+	}
+
+	.cardTitle {
+		font-weight: 400;
+		font-size: 32px;
+		margin-top: 90px;
+		margin-bottom: 70px;
+	}
+
+	.cardAction {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 60px;
+		position: relative;
+		width: 100%;
+		margin-top: 50px;
+
+		.encrypt {
+			background-color: #0075FF;
+			box-shadow: 3px 3px 0px #0455B5;
+			left: 10%;
+
+			&:active {
+				left: 10.5%;
+			}
+		}
+
+		.decrypt {
+			background-color: #7C3AED;
+			box-shadow: 3px 3px 0px #5218B7;
+			right: 10%;
+
+			&:active {
+				right: 9.5%;
+			}
+		}
+	}
+
+	.processCardAction {
+		margin-top: 102px;
+	}
+
+	.selectedProcess {
+		background-color: #E2E8F0;
+		border-radius: 10px;
+		padding: 10px 20px;
+		font-weight: 600;
+		font-size: 14px;
+		margin: 20px 0;
+	}
+
+	.selectFiles {
+		background-color: #0075FF;
+		box-shadow: 3px 3px 0px #0455B5;
+		left: 0;
+		right: 0;
+		width: max-content;
+		margin: auto;
+		right: -40%;
+
+		&:active {
+			left: 3px;
+		}
+	}
+
+	.selectFileLocation {
+		max-width: 210px;
+		min-width: 210px;
+		border: 1px solid #6D6D6D;
+		color: #6D6D6D;
+		position: absolute;
+		left: 10%;
+		border-radius: 8px;
+		overflow: hidden;
+		padding: 18px 20px;
+		white-space: nowrap;
+		max-height: 50px !important;
+		text-overflow: ellipsis;
+		user-select: none;
+	}
+
+	.cardHtml {
+		font-size: 22px;
+		font-weight: 400;
+		text-align: center;
+		line-height: 35px;
+	}
+
+	.selectedFile {
+		display: none;
+		visibility: hidden;
+		position: absolute;
+		height: 0;
+		width: 0;
+		z-index: -1;
+	}
+
+	.startProcessButton {
+		background-color: #8B5CF6;
+		box-shadow: 3px 3px 0px #592AC4;
+		max-height: 0px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		bottom: -70%;
+		width: max-content;
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.3s ease;
+
+		&:active {
+			left: 3px;
+		}
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.errorHeadline {
+	color: red !important;
+	background-color: #ff000040;
+	border: 2px solid #ff0000 !important;
+}
+
+.errorContainer {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: #00000060;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Inter";
+	font-weight: 400;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.5s ease;
+	z-index: 10000000;
+
+	.errorCard {
+		max-height: 400px;
+		min-height: 300px;
+		width: 600px;
+		border-radius: 20px;
+		background-color: #fff;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 40px 20px;
+		opacity: 0;
+		transform: translate(100px, -150px) rotateX(80deg);
+		transition: all 1s ease;
+
+		#errorTitle {
+			font-family: "Inter";
+			font-weight: 200;
+			margin: 2rem 0;
+			font-size: 32px;
+			text-overflow: ellipsis;
+		}
+
+		#errorMessage {
+			font-family: "Inter";
+			font-weight: 100;
+			margin: 2rem 0;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		#errorImage {
+			width: 100px;
+		}
+	}
+}
+
+.downloadUrl {
+	margin: 1rem;
+	border-radius: 8px;
+	padding: 1rem;
+	background-color: #07f;
+	text-decoration: none;
+	color: #fff;
+}
